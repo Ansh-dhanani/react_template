@@ -1,0 +1,178 @@
+/* ================= GOOGLE FONTS ================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Outfit:wght@100..900&family=Montserrat:wght@100..900&family=Poppins:wght@100..900&family=Roboto:wght@100..900&family=Open+Sans:wght@100..900&family=Playfair+Display:wght@100..900&family=Raleway:wght@100..900&family=Rubik:wght@100..900&display=swap');
+
+/* ================= APPLE GARAMOND ================= */
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/fonts/AppleGaramond.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/fonts/AppleGaramond-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/fonts/AppleGaramond-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/fonts/AppleGaramond-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/fonts/AppleGaramond-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Apple Garamond';
+  src: url('./assets/fonts/AppleGaramond-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+.font-apple {
+  font-family: 'Apple Garamond', serif;
+}
+
+/* ================= MERAPRO ================= */
+@font-face {
+  font-family: 'MeraPro';
+  src: url('./assets/fonts/MeraPro-V4Oex.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.font-mera-pro {
+  font-family: 'MeraPro', sans-serif;
+}
+
+/* ================= BOONE ================= */
+@font-face {
+  font-family: 'Boone';
+  src: url('./assets/fonts/BOONE.woff') format('woff');
+}
+.font-boone {
+  font-family: 'Boone', sans-serif;
+}
+
+/* ================= DEFAULT LINGO ================= */
+@font-face {
+  font-family: 'Default Lingo';
+  src: url('./assets/fonts/Default-Lingo-Regular.otf') format('opentype');
+}
+.font-default-lingo {
+  font-family: 'Default Lingo', sans-serif;
+}
+
+/* ================= MINECRAFT ================= */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('./assets/fonts/Minecraft.ttf') format('truetype');
+}
+.font-minecraft {
+  font-family: 'Minecraft', monospace;
+}
+
+/* ================= MONTBLANC ================= */
+@font-face {
+  font-family: 'Montblanc';
+  src: url('./assets/fonts/montblanc.ttf') format('truetype'),
+       url('./assets/fonts/montblanc.otf') format('opentype');
+}
+.font-montblanc {
+  font-family: 'Montblanc', sans-serif;
+}
+
+/* ================= PALMORE ================= */
+@font-face {
+  font-family: 'Palmore';
+  src: url('./assets/fonts/Palmore-Bold.ttf') format('truetype'),
+       url('./assets/fonts/Palmore-Bold.otf') format('opentype'),
+       url('./assets/fonts/Palmore Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Palmore';
+  src: url('./assets/fonts/Palmore-Light.ttf') format('truetype'),
+       url('./assets/fonts/Palmore-Light.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'Palmore';
+  src: url('./assets/fonts/Palmore-Regular.ttf') format('truetype'),
+       url('./assets/fonts/Palmore.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Palmore';
+  src: url('./assets/fonts/Palmore-Semibold.ttf') format('truetype'),
+       url('./assets/fonts/Palmore-Semibold.otf') format('opentype');
+  font-weight: 600;
+}
+.font-palmore {
+  font-family: 'Palmore', sans-serif;
+}
+
+/* ================= TAN KULTURE ================= */
+@font-face {
+  font-family: 'TAN Kulture';
+  src: url('./assets/fonts/TAN-KULTURE-DISPLAY.otf') format('opentype');
+}
+.font-tan-kulture {
+  font-family: 'TAN Kulture', serif;
+}
+
+/* Custom font classes */
+  .font-apple-garamond {
+    font-family: 'Apple Garamond', serif;
+  }
+  .font-merapro {
+    font-family: 'MeraPro', sans-serif;
+  }
+  .font-boone {
+    font-family: 'Boone', sans-serif;
+  }
+  .font-default-lingo {
+    font-family: 'Default Lingo', sans-serif;
+  }
+  .font-minecraft {
+    font-family: 'Minecraft', monospace;
+  }
+  .font-montblanc {
+    font-family: 'Montblanc', sans-serif;
+  }
+  .font-palmore {
+    font-family: 'Palmore', sans-serif;
+  }
+  .font-tan-kulture {
+    font-family: 'TAN Kulture', serif;
+  }
+
+
+/* ================= COLOR VARIABLES ================= */
+:root {
+  --color-bg: #ffffff;
+  --color-text: #1a1a1a;
+  --color-primary: #2563eb;
+  --color-secondary: #f97316;
+  --color-accent: #14b8a6;
+  --color-muted: #f3f4f6;
+  --color-border: #e5e7eb;
+  --color-card: #ffffff;
+}
+
+.dark {
+  --color-bg: #0f172a;
+  --color-text: #f8fafc;
+  --color-primary: #3b82f6;
+  --color-secondary: #fb923c;
+  --color-accent: #2dd4bf;
+  --color-muted: #1e293b;
+  --color-border: #334155;
+  --color-card: #1e293b;
+}
+@import "tailwindcss";
