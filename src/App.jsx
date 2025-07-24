@@ -1,3 +1,5 @@
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 function App() {
   /*
 "font-apple-garamond"
@@ -20,9 +22,20 @@ bg-[var(--color-primary)]
 */
 
 
+// Initialize Lenis
+const lenis = new Lenis();
+
+// Use requestAnimationFrame to continuously update the scroll
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+requestAnimationFrame(raf);
+
   return (
     <>
-       <h1>this is template</h1>
+    <h1>Template</h1>
     </>
   );
 }
