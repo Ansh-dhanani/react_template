@@ -42,6 +42,28 @@
 .font-apple {
   font-family: 'Apple Garamond', serif;
 }
+.font-apple-bold {
+  font-family: 'Apple Garamond', serif;
+  font-weight: 700;
+}
+.font-apple-bold-italic {
+  font-family: 'Apple Garamond', serif;
+  font-weight: 700;
+  font-style: italic;
+}
+.font-apple-italic {
+  font-family: 'Apple Garamond', serif;
+  font-style: italic;
+}
+.font-apple-light {
+  font-family: 'Apple Garamond', serif;
+  font-weight: 100;
+}
+.font-apple-light-italic {
+  font-family: 'Apple Garamond', serif;
+  font-weight: 100;
+  font-style: italic;
+}
 
 /* ================= MERAPRO ================= */
 @font-face {
