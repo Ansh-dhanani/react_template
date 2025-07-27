@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import Navbar from "./components/Nav1";
 //import { HoverFollowProvider,HoverFollowTrigger,HoverFollowButton } from "./components/Hover.jsx";
 import NoiseEffect from "./components/Noise.jsx"; // Adjust the import path as necessary
+import CustomCursor from "./components/CustomCursor.jsx";
 function App() {
   /*
 "font-apple-garamond"
@@ -53,6 +54,8 @@ bg-[var(--color-primary)]
 
   return (
     <>
+      {/* Custom Cursor Component */}
+      <CustomCursor/> 
       {/*for Hero section with blur and on load word by word animation*/}
       {/* <h1 className="relative z-10 mx-auto max-w-4xl text-center text-[230px] font-apple-light tracking-tighter text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
           {"Welcome to this React Template"

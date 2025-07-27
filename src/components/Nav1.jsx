@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import { Squeeze as Hamburger } from 'hamburger-react'
 const Navbar = ({ 
   logo = "W*NDERMAKE", 
   menuItems = ['WORK', 'ABOUT', 'SERVICES', 'CONTACT'],
@@ -32,15 +32,18 @@ const Navbar = ({
           onClick={toggleMenu}
           className="w-28 h-20 border-none cursor-pointer flex flex-col justify-center items-center gap-2 transition-all duration-300 rounded-sm"
         >
-          <span
-            className={`w-14 h-0.5 bg-white transition-all duration-500 ${
-              isMenuOpen ? 'rotate-45 translate-y-1.5 h-1' : ''
-            }`}
-          />
-          <span
-            className={`w-14 h-0.5 bg-white transition-all duration-500 ${
-              isMenuOpen ? '-rotate-45 -translate-y-1' : ''
-            }`}
+          <Hamburger
+            toggled={isMenuOpen}  
+            toggle={setIsMenuOpen}
+            size={27}
+            color="#fff"
+            duration={0.8}
+            easing="ease-in-out"
+            rounded
+            direction="right"
+            distance={10}
+            label="Toggle Menu"
+            className="z-50"
           />
         </button>
       </header>
@@ -51,8 +54,8 @@ const Navbar = ({
         <div 
           className={`relative z-10 w-full h-full flex flex-col ${isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'}`}
           style={{
-            clipPath: isMenuOpen ? 'circle(150% at top right)' : 'circle(0% at top right)',
-            transition: isMenuOpen ? 'clip-path 1.3s cubic-bezier(1.00,0.12,0.13,0.96)' : 'clip-path 0.4s ease-in'
+            clipPath: isMenuOpen ? 'circle(150% at top right)' : 'circle(0% at calc(100% - 70px) 0)',    
+            transition: isMenuOpen ? 'clip-path 2s cubic-bezier(0.83,-0.02,0.00,1.02)' : 'clip-path 0.4s ease-in'
           }}
         >
           {/* Dark background for revealed content */}
