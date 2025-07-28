@@ -153,6 +153,37 @@
   font-family: 'TAN Kulture', serif;
 }
 
+/* ================= GRIDULAR ================= */
+@font-face {
+  font-family: 'Gridular';
+  src: url('./assets/fonts/Gridular-Regular.woff2') format('woff2'),
+       url('./assets/fonts/Gridular-Regular.woff') format('woff');
+  font-weight: 400;
+}
+.font-gridular {
+  font-family: 'Gridular', sans-serif;
+}
+
+/* ================= TELEGRAF ================= */
+@font-face {
+  font-family: 'Telegraf';
+  src: url('./assets/fonts/TelegrafRegular_272984568a25d8528fe2de8b20b29011.woff') format('woff');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Telegraf';
+  src: url('./assets/fonts/Telegraf UltraLight 200.woff') format('woff');
+  font-weight: 200;
+}
+@font-face {
+  font-family: 'Telegraf';
+  src: url('./assets/fonts/Telegraf UltraBold 800.woff') format('woff');
+  font-weight: 800;
+}
+.font-telegraf {
+  font-family: 'Telegraf', sans-serif;
+}
+
 /* Custom font classes */
   .font-apple-garamond {
     font-family: 'Apple Garamond', serif;
@@ -178,27 +209,111 @@
   .font-tan-kulture {
     font-family: 'TAN Kulture', serif;
   }
+  .font-gridular {
+    font-family: 'Gridular', sans-serif;
+  }
+  .font-telegraf {
+    font-family: 'Telegraf', sans-serif;
+  }
 
 
 /* ================= COLOR VARIABLES ================= */
+/* ================= COLOR VARIABLES ================= */
 :root {
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-primary: #2563eb;
-  --color-secondary: #f97316;
-  --color-accent: #14b8a6;
-  --color-muted: #f3f4f6;
-  --color-border: #e5e7eb;
-  --color-card: #ffffff;
-}
+  /* Background Colors */
+  --color-bg: #f9fafb;
+  --color-bg-secondary: #f3f4f6;
+  --color-bg-tertiary: #e5e7eb;
 
+  /* Text Colors */
+  --color-text: #111827;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #6b7280;
+  --color-text-inverse: #ffffff;
+
+  /* Brand Colors (Primary/Secondary) */
+  --color-primary: #2563eb; /* Blue-600 */
+  --color-primary-hover: #1d4ed8;
+  --color-primary-light: #eff6ff;
+  --color-secondary: #10b981; /* Emerald-500 */
+  --color-secondary-hover: #059669;
+  --color-secondary-light: #ecfdf5;
+
+  /* Accent Colors */
+  --color-accent: #7c3aed; /* Violet-600 */
+  --color-accent-hover: #6d28d9;
+  --color-accent-light: #f3e8ff;
+
+  /* Status Colors */
+  --color-success: #22c55e;
+  --color-success-light: #dcfce7;
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+  --color-error: #ef4444;
+  --color-error-light: #fee2e2;
+  --color-info: #3b82f6;
+  --color-info-light: #dbeafe;
+
+  /* UI Colors */
+  --color-border: #e5e7eb;
+  --color-border-light: #f3f4f6;
+  --color-border-dark: #d1d5db;
+  --color-card: #ffffff;
+  --color-overlay: rgba(0, 0, 0, 0.6);
+  --color-shadow: rgba(0, 0, 0, 0.05);
+
+  /* Interactive Colors */
+  --color-hover: #f1f5f9;
+  --color-active: #e2e8f0;
+  --color-focus: #2563eb;
+  --color-disabled: #9ca3af;
+}
 .dark {
-  --color-bg: #0f172a;
-  --color-text: #f8fafc;
-  --color-primary: #3b82f6;
-  --color-secondary: #fb923c;
-  --color-accent: #2dd4bf;
-  --color-muted: #1e293b;
+  /* Background Colors */
+  --color-bg: #0f172a; /* Slate-900 */
+  --color-bg-secondary: #1e293b; /* Slate-800 */
+  --color-bg-tertiary: #334155; /* Slate-700 */
+
+  /* Text Colors */
+  --color-text: #f1f5f9;
+  --color-text-secondary: #cbd5e1;
+  --color-text-muted: #94a3b8;
+  --color-text-inverse: #0f172a;
+
+  /* Brand Colors (Primary/Secondary) */
+  --color-primary: #60a5fa; /* Blue-400 */
+  --color-primary-hover: #3b82f6;
+  --color-primary-light: #1e40af;
+  --color-secondary: #34d399; /* Emerald-400 */
+  --color-secondary-hover: #10b981;
+  --color-secondary-light: #064e3b;
+
+  /* Accent Colors */
+  --color-accent: #c084fc; /* Violet-400 */
+  --color-accent-hover: #a855f7;
+  --color-accent-light: #6b21a8;
+
+  /* Status Colors */
+  --color-success: #4ade80;
+  --color-success-light: #166534;
+  --color-warning: #facc15;
+  --color-warning-light: #854d0e;
+  --color-error: #f87171;
+  --color-error-light: #7f1d1d;
+  --color-info: #60a5fa;
+  --color-info-light: #1e3a8a;
+
+  /* UI Colors */
   --color-border: #334155;
+  --color-border-light: #1e293b;
+  --color-border-dark: #475569;
   --color-card: #1e293b;
+  --color-overlay: rgba(0, 0, 0, 0.7);
+  --color-shadow: rgba(0, 0, 0, 0.3);
+
+  /* Interactive Colors */
+  --color-hover: #1e293b;
+  --color-active: #334155;
+  --color-focus: #3b82f6;
+  --color-disabled: #64748b;
 }

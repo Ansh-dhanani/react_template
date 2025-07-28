@@ -1,11 +1,18 @@
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import { motion } from "motion/react";
+import { useState } from "react";
 import Navbar from "./components/Nav1";
 //import { HoverFollowProvider,HoverFollowTrigger,HoverFollowButton } from "./components/Hover.jsx";
 import NoiseEffect from "./components/Noise.jsx"; // Adjust the import path as necessary
 import CustomCursor from "./components/CustomCursor.jsx";
 function App() {
+  const [isDark, setIsDark] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDark(!isDark);
+    document.documentElement.classList.toggle("dark");
+  };
   /*
 "font-apple-garamond"
 "font-merapro"
@@ -15,6 +22,8 @@ function App() {
 "font-montblanc"
 "font-palmore"
 "font-tan-kulture"
+"font-gridular"
+"font-telegraf"
 */
 
   // for colour variables use the following format:
@@ -51,50 +60,38 @@ bg-[var(--color-primary)]
       alt: "Image 3",
     },
   ];
+  const [fontLoaded, setFontLoaded] = useState(false);
 
   return (
-    <>
+    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300">
       {/* Custom Cursor Component */}
-      <CustomCursor/> 
+      <CustomCursor />
+      <Navbar isDark={isDark} toggleTheme={toggleTheme} />
+
+
+
       {/*for Hero section with blur and on load word by word animation*/}
-      {/* <h1 className="relative z-10 mx-auto max-w-4xl text-center text-[230px] font-apple-light tracking-tighter text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
-          {"Welcome to this React Template"
-            .split(" ")
-            .map((word, index) => (
-              <motion.span
-                key={index}
-                initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: index * 0.1,
-                  ease: "easeInOut",
-                }}
-                className="mr-[30px] inline-block"
-              >
-                {word}
-              </motion.span>
-            ))}
-        </h1> */}
+       <h1 className="relative font-apple z-0 mx-auto max-w-4xl text-center pt-20 text-[20px] tracking-tighter text-[var(--color-text)] md:text-4xl lg:text-7xl">
+        {"Welcome to this React Template".split(" ").map((word, index) => (
+          <motion.span
+            key={index}
+            initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
+            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: index * 0.1,
+              ease: "easeInOut",
+            }}
+            className="mr-[30px] inline-block"
+          >
+            {word}
+          </motion.span>
+        ))}
+      </h1>
       {/*hero section end*/}
-      {/*for hero section with blur and on load word by word animation*/}
 
-
-      {/* <HoverFollowProvider className="min-h-screen bg-gray-100">
-        <HoverFollowButton
-          offset={{ x: -70, y:-20 }}
-          className="bg-blue-500 text-white"
-        >
-          View Project 🡥
-        </HoverFollowButton>
-
-        <HoverFollowTrigger as="button" className="p-10 align-middle content-center bg-red-500 rounded">
-          I'm a button trigger
-        </HoverFollowTrigger>
-      </HoverFollowProvider> */}
-    <Navbar/>
-        <NoiseEffect />
-    </>
+      {/* <NoiseEffect /> */}
+    </div>
   );
 }
 
