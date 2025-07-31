@@ -21,8 +21,25 @@ const Navbar = ({
   return (
     <>
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full h-10 bg-[var(--color-bg-tertiary)] border-b border-[var(--color-border)] flex items-center justify-between px-5 z-50">
+      <header className="fixed top-0 left-0 w-full h-10 bg-[var(--color-bg-tertiary)] border-b border-[var(--color-border)] flex items-center justify-between px-4 z-50">
+        
         <div className="w-12"></div>
+
+        {/*Nav-items*/}
+      <div id="nav" className="hidden md:grid grid-cols-4 gap-8 p-2 bg-[var(--color-bg-tertiary)]">
+      {menuItems.map((item) => (
+      <div
+      key={item}
+      className="navbar-items text-center font-semibold text-[var(--color-text)] hover:text-blue-500 cursor-pointer"
+     >
+      {item}
+    </div>
+    ))}
+    </div>
+         {/* Logo */}
+        <h1 className="text-[var(--color-text)] justify-center ml-[55px] pl-4 text-lg md:text-2xl font-bold tracking-wider whitespace-nowrap flex-shrink-0">
+          {logo}
+        </h1>
            {/* Theme Toggle */}
         <button
           onClick={toggleTheme}
@@ -39,17 +56,10 @@ const Navbar = ({
           </span>
         </button>
 
-
-        {/* Logo */}
-        <h1 className="text-[var(--color-text)] justify-center ml-[55px] pl-4 text-lg md:text-2xl font-bold tracking-wider whitespace-nowrap flex-shrink-0">
-          {logo}
-        </h1>
-
-     
-        {/* Hamburger Button */}
-        <div className="w-28 h-20 flex justify-center items-center">
-          <Hamburger
-            toggled={isMenuOpen}  
+     {/* Hamburger Button */}
+       <div className="w-28 h-20 flex justify-center items-center md:hidden">
+        <Hamburger
+            toggled={isMenuOpen}
             toggle={toggleMenu}
             size={27}
             color="var(--color-text)"
@@ -60,10 +70,9 @@ const Navbar = ({
             distance={10}
             label="Toggle Menu"
             className="z-50"
-          />
-        </div>
+         />
+      </div>
       </header>
-
       {/* Navigation Menu */}
       <nav className={`fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center overflow-hidden ${isMenuOpen ? 'z-30 pointer-events-auto' : 'z-30 pointer-events-none'}`}>
         <div 
