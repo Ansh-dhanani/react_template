@@ -237,3 +237,14 @@
   --color-accent: #f24405;     /* Red-Orange Accent */
   --color-contrast: #f2f0e4;   /* Contrast Element */
 }
+
+/* ================= TEXT SELECTION STYLING ================= */
+::selection {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+::-moz-selection {
+  background: var(--color-text);
+  color: var(--color-bg);
+}

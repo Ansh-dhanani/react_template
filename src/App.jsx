@@ -70,7 +70,16 @@ bg-[var(--color-primary)]
 
 
 
-      {/*for Hero section with blur and on load word by word animation*/}
+    
+
+      {/* Sample Pages/Sections for Scrolling */}
+      <section id="home" className="min-h-screen flex items-center justify-center bg-[var(--color-bg)]">
+        <div className="text-center">
+          <h2 className="text-4xl md:text-6xl font-montblanc font-bold text-[var(--color-text)] mb-4">Home Section</h2>
+          <p className="text-lg md:text-xl text-[var(--color-text)] opacity-70 max-w-2xl mx-auto">
+            This is the home section. The navbar will automatically highlight "Home" when you're in this area.
+          </p>
+            {/*for Hero section with blur and on load word by word animation*/}
        <h1 className="relative font-apple z-0 mx-auto max-w-4xl text-center pt-20 text-[20px] tracking-tighter text-[var(--color-text)] md:text-4xl lg:text-7xl">
         {"Welcome to this React Template".split(" ").map((word, index) => (
           <motion.span
@@ -89,6 +98,36 @@ bg-[var(--color-primary)]
         ))}
       </h1>
       {/*hero section end*/}
+        </div>
+        
+      </section>
+
+      <section id="about" className="min-h-screen flex items-center justify-center bg-[var(--color-primary)]">
+        <div className="text-center">
+          <h2 className="text-4xl md:text-6xl font-montblanc font-bold text-[var(--color-contrast)] mb-4">About Section</h2>
+          <p className="text-lg md:text-xl text-[var(--color-contrast)] opacity-70 max-w-2xl mx-auto">
+            This is the about section. The navbar will automatically highlight "About" when you scroll here.
+          </p>
+        </div>
+      </section>
+
+      <section id="services" className="min-h-screen flex items-center justify-center bg-[var(--color-secondary)]">
+        <div className="text-center">
+          <h2 className="text-4xl md:text-6xl font-montblanc font-bold text-[var(--color-text)] mb-4">Services Section</h2>
+          <p className="text-lg md:text-xl text-[var(--color-text)] opacity-70 max-w-2xl mx-auto">
+            This is the services section. The navbar will automatically highlight "Services" when you're here.
+          </p>
+        </div>
+      </section>
+
+      <section id="contact" className="min-h-screen flex items-center justify-center bg-[var(--color-bg)]">
+        <div className="text-center">
+          <h2 className="text-4xl md:text-6xl font-montblanc font-bold text-[var(--color-text)] mb-4">Contact Section</h2>
+          <p className="text-lg md:text-xl text-[var(--color-text)] opacity-70 max-w-2xl mx-auto">
+            This is the contact section. The navbar will automatically highlight "Contact" when you scroll here.
+          </p>
+        </div>
+      </section>
 
       {/* <NoiseEffect /> */}
     </div>
