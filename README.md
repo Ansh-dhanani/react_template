@@ -68,15 +68,15 @@ A clean, modern admin dashboard layout.
 
 | Font | Screenshot | Download |
 |------|------------|----------|
-| Apple Garamond | ![](./public/Apple%20Garamond.png) | [Download](./public/Apple%20Garamond.png) |
-| Default Lingo | ![](./public/default%20Lingo.png) | [Download](./public/default%20Lingo.png) |
-| Gridular | ![](./public/Gridular.png) | [Download](./public/Gridular.png) |
-| MeraPro | ![](./public/MeraPro.png) | [Download](./public/MeraPro.png) |
-| Minecraft | ![](./public/Minecraft.png) | [Download](./public/Minecraft.png) |
-| Montblanc | ![](./public/Montblanc.png) | [Download](./public/Montblanc.png) |
-| Palmore | ![](./public/Palmore.png) | [Download](./public/Palmore.png) |
-| Tan Kulture | ![](./public/Tan%20Kulture.png) | [Download](./public/Tan%20Kulture.png) |
-| Telegraph | ![](./public/Telegraph.png) | [Download](./public/Telegraph.png) |
+| Apple Garamond | [![](./public/Apple%20Garamond.png)](https://github.com/Ansh-dhanani/react_template/tree/main/fonts/apple-garamond) | [Download](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/fonts/apple-garamond) |
+| Default Lingo | [![](./public/default%20Lingo.png)](https://github.com/Ansh-dhanani/react_template/tree/main/fonts/default-lingo) | [Download](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/fonts/default-lingo) |
+| Gridular | [![](./public/Gridular.png)](https://github.com/Ansh-dhanani/react_template/tree/main/fonts/gridular) | [Download](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/fonts/gridular) |
+| MeraPro | [![](./public/MeraPro.png)](https://github.com/Ansh-dhanani/react_template/tree/main/fonts/merapro) | [Download](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/fonts/merapro) |
+| Minecraft | [![](./public/Minecraft.png)](https://github.com/Ansh-dhanani/react_template/tree/main/fonts/minecraft) | [Download](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/fonts/minecraft) |
+| Montblanc | [![](./public/Montblanc.png)](https://github.com/Ansh-dhanani/react_template/tree/main/fonts/montblanc) | [Download](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/fonts/montblanc) |
+| Palmore | [![](./public/Palmore.png)](https://github.com/Ansh-dhanani/react_template/tree/main/fonts/palmore) | [Download](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/fonts/palmore) |
+| Tan Kulture | [![](./public/Tan%20Kulture.png)](https://github.com/Ansh-dhanani/react_template/tree/main/fonts/tan-kulture) | [Download](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/fonts/tan-kulture) |
+| Telegraph | [![](./public/Telegraph.png)](https://github.com/Ansh-dhanani/react_template/tree/main/fonts/telegraph) | [Download](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/fonts/telegraph) |
 
 ---
 
