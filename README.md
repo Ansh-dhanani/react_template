@@ -48,8 +48,8 @@ Modern brand-focused design with premium components.
 #### 🔍 Components (Brand Template)
 | Component | Screenshot | Font Screenshot | Videos | Description | Download |
 |----------|------------|----------------|--------|-------------|----------|
-| Navmenu.jsx | ![](./screenshots/brand/navmenu.png) | ![](./screenshots/brand/navmenu-font.png) | <video width="200" controls><source src="./public/Navmenu1.mp4" type="video/mp4">Video</video> | Premium navigation menu | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/brand_template1/components/Navmenu.jsx) |
-| CustomCursor.jsx | ![](./screenshots/brand/cursor.png) | ![](./screenshots/brand/cursor-font.png) | <video width="200" controls><source src="./public/CustomCursor1.mp4" type="video/mp4">Video</video> | Interactive custom cursor | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/brand_template1/components/CustomCursor.jsx) |
+| Navmenu.jsx | ![](./screenshots/brand/navmenu.png) | ![](./screenshots/brand/navmenu-font.png) | ![Navmenu Demo](./public/Navmenu1.gif) | Premium navigation menu | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/brand_template1/components/Navmenu.jsx) |
+| CustomCursor.jsx | ![](./screenshots/brand/cursor.png) | ![](./screenshots/brand/cursor-font.png) | ![CustomCursor Demo](./public/CustomCursor1.gif) | Interactive custom cursor | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/brand_template1/components/CustomCursor.jsx) |
 
 ### 🌐 Landing Page Starter
 Fully responsive hero layout with sections.
