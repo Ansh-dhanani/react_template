@@ -22,8 +22,14 @@ Minimal setup — just React + Vite + TailwindCSS.
 ![Basic Screenshot](./screenshots/basic.png)
 
 - **Direct Download**: [📥 ZIP](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/Templates/Template_1)
-- **Folder**: `Templates/Template_1`
+- **Folder**: Templates/Template_1
 - **Perfect for**: Beginners or fast prototypes
+
+#### 🔍 Components (Basic)
+| Component | Screenshot | Description | Download |
+|----------|------------|-------------|----------|
+| Navbar.jsx | ![](./screenshots/basic/navbar.png) | A minimal navigation bar | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/Template_1/components/Navbar.jsx) |
+| Button.jsx | ![](./screenshots/basic/button.png) | A reusable button component | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/Template_1/components/Button.jsx) |
 
 ### 🌐 Landing Page Starter
 Fully responsive hero layout with sections.
@@ -31,8 +37,14 @@ Fully responsive hero layout with sections.
 ![Landing Screenshot](./screenshots/landing.png)
 
 - **Direct Download**: [📥 ZIP](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/Templates/Template_2)
-- **Folder**: `Templates/Template_2`
+- **Folder**: Templates/Template_2
 - **Perfect for**: Portfolios, product pages
+
+#### 🔍 Components (Landing Page)
+| Component | Screenshot | Description | Download |
+|----------|------------|-------------|----------|
+| Hero.jsx | ![](./screenshots/landing/hero.png) | Eye-catching hero section | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/Template_2/components/Hero.jsx) |
+| Features.jsx | ![](./screenshots/landing/features.png) | Responsive features section | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/Template_2/components/Features.jsx) |
 
 ### 📊 Dashboard Starter
 A clean, modern admin dashboard layout.
@@ -40,8 +52,14 @@ A clean, modern admin dashboard layout.
 ![Dashboard Screenshot](./screenshots/dashboard.png)
 
 - **Direct Download**: [📥 ZIP](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/Templates/Template_3)
-- **Folder**: `Templates/Template_3`
+- **Folder**: Templates/Template_3
 - **Perfect for**: SaaS apps, admin panels
+
+#### 🔍 Components (Dashboard)
+| Component | Screenshot | Description | Download |
+|----------|------------|-------------|----------|
+| Sidebar.jsx | ![](./screenshots/dashboard/sidebar.png) | Modern sidebar for navigation | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/Template_3/components/Sidebar.jsx) |
+| StatsCard.jsx | ![](./screenshots/dashboard/statscard.png) | Card for displaying metrics | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/Template_3/components/StatsCard.jsx) |
 
 ---
 
