@@ -4,7 +4,7 @@
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer--Motion-EF2779?style=for-the-badge&logo=framer&logoColor=white)
 
-##This project is under construction. Please stay tuned.
+## This project is under construction. So, the link might not work. Please stay tuned.
 
 A collection of 🔥 React templates powered by Vite — built to give you a head start on modern frontend projects. Just clone, code, and flex! 💅
 
