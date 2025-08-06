@@ -14,24 +14,23 @@ A collection of 🔥 React templates powered by Vite — built to give you a hea
 
 ## 🌈 Available Templates
 
-### 📦 Basic Starter
-Minimal setup — just React + Vite + TailwindCSS.
+### 📦 Brand Template
+Modern brand-focused design with premium components.
 
 **The below links are safe. You can download it without any issues**
 
 **If the link below doesn't work, you can download the specific folder manually by following the instructions given below the feature section**
 
-![Basic Screenshot](./screenshots/basic.png)
+![Brand Screenshot](./screenshots/brand.png)
 
-- **Direct Download**: [📥 ZIP](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/Templates/Template_1)
-- **Folder**: Templates/Template_1
-- **Perfect for**: Beginners or fast prototypes
+- **Direct Download**: [📥 ZIP](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/Templates/brand_template1)
+- **Folder**: Templates/brand_template1
+- **Perfect for**: Brand websites, corporate sites
 
-#### 🔍 Components (Basic)
+#### 🔍 Components (Brand Template)
 | Component | Screenshot | Font Screenshot | Videos | Description | Download |
 |----------|------------|----------------|--------|-------------|----------|
-| Navbar.jsx | ![](./screenshots/basic/navbar.png) | ![](./screenshots/basic/navbar-font.png) | [Video](./videos/basic/navbar.mp4) | A minimal navigation bar | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/Template_1/components/Navbar.jsx) |
-| Button.jsx | ![](./screenshots/basic/button.png) | ![](./screenshots/basic/button-font.png) | [Video](./videos/basic/button.mp4) | A reusable button component | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/Template_1/components/Button.jsx) |
+| Navmenu.jsx | ![](./screenshots/brand/navmenu.png) | ![](./screenshots/brand/navmenu-font.png) | [Video](./videos/brand/navmenu.mp4) | Premium navigation menu | [Download](https://raw.githubusercontent.com/Ansh-dhanani/react_template/main/Templates/brand_template1/components/Navmenu.jsx) |
 
 ### 🌐 Landing Page Starter
 Fully responsive hero layout with sections.
@@ -65,6 +64,22 @@ A clean, modern admin dashboard layout.
 
 ---
 
+## 🎨 Font Collection
+
+| Font | Screenshot | Download |
+|------|------------|----------|
+| Apple Garamond | ![](./public/Apple%20Garamond.png) | [Download](./public/Apple%20Garamond.png) |
+| Default Lingo | ![](./public/default%20Lingo.png) | [Download](./public/default%20Lingo.png) |
+| Gridular | ![](./public/Gridular.png) | [Download](./public/Gridular.png) |
+| MeraPro | ![](./public/MeraPro.png) | [Download](./public/MeraPro.png) |
+| Minecraft | ![](./public/Minecraft.png) | [Download](./public/Minecraft.png) |
+| Montblanc | ![](./public/Montblanc.png) | [Download](./public/Montblanc.png) |
+| Palmore | ![](./public/Palmore.png) | [Download](./public/Palmore.png) |
+| Tan Kulture | ![](./public/Tan%20Kulture.png) | [Download](./public/Tan%20Kulture.png) |
+| Telegraph | ![](./public/Telegraph.png) | [Download](./public/Telegraph.png) |
+
+---
+
 ## 🛠️ Features (All Templates)
 
 - 🧠 Built with **React 18 + Vite**
@@ -87,10 +102,10 @@ npx degit Ansh-dhanani/react_template my-app
 git clone --no-checkout https://github.com/Ansh-dhanani/react_template.git
 cd react_template
 git sparse-checkout init --cone
-git sparse-checkout set Templates/Template_1
+git sparse-checkout set Templates/brand_template1
 
 # Install deps
-cd Templates/Template_1
+cd Templates/brand_template1
 npm install
 
 # Start dev server
@@ -121,7 +136,7 @@ Made with 💙 by [Ansh Dhanani](https://github.com/Ansh-dhanani)
 
 ```txt
 📁 Templates/
-├── Template_1/  → Basic
+├── brand_template1/  → Brand Template
 ├── Template_2/  → Landing Page
 ├── Template_3/  → Dashboard
 └── More coming soon...

@@ -76,13 +76,8 @@ bg-[var(--color-primary)]
       {/* Sample Pages/Sections for Scrolling */}
       <section id="home" className="min-h-screen flex items-center justify-center bg-[var(--color-bg)]">
         <div className="text-center">
-          <h2 className="text-4xl md:text-6xl font-montblanc font-bold text-[var(--color-text)] mb-4">Home Section</h2>
-          <p className="text-lg md:text-xl text-[var(--color-text)] opacity-70 max-w-2xl mx-auto">
-            This is the home section. The navbar will automatically highlight "Home" when you're in this area.
-          </p>
-            {/*for Hero section with blur and on load word by word animation*/}
-       <h1 className="relative font-apple z-0 mx-auto max-w-4xl text-center pt-20 text-[20px] tracking-tighter text-[var(--color-text)] md:text-4xl lg:text-7xl">
-        {"Welcome to this React Template".split(" ").map((word, index) => (
+           <h1 className="relative text-5xl md:text-6xl  ml-8 font-montblanc font-bold text-[var(--color-text)] mb-4">
+        {"Home Section".split(" ").map((word, index) => (
           <motion.span
             key={index}
             initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
@@ -98,6 +93,11 @@ bg-[var(--color-primary)]
           </motion.span>
         ))}
       </h1>
+          <p className="text-lg md:text-xl text-[var(--color-text)] opacity-70 max-w-2xl mx-auto">
+            This is the home section. The navbar will automatically highlight "Home" when you're in this area.
+          </p>
+            {/*for Hero section with blur and on load word by word animation*/}
+      
       {/*hero section end*/}
         </div>
         
