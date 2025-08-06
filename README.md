@@ -1,5 +1,9 @@
 # ⚛️ React + Vite Starters
 
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer--Motion-EF2779?style=for-the-badge&logo=framer&logoColor=white)
+
 A collection of 🔥 React templates powered by Vite — built to give you a head start on modern frontend projects. Just clone, code, and flex! 💅
 
 > More templates dropping soon. Stay tuned. 📡
