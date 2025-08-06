@@ -6,6 +6,7 @@ import Navbar from "./components/Nav2.jsx";
 //import { HoverFollowProvider,HoverFollowTrigger,HoverFollowButton } from "./components/Hover.jsx";
 import NoiseEffect from "./components/Noise.jsx"; // Adjust the import path as necessary
 import CustomCursor from "./components/CustomCursor.jsx";
+import ScrollToTopButton from "./components/ScrolltoTop.jsx"; 
 function App() {
   const [isDark, setIsDark] = useState(false);
 
@@ -128,7 +129,7 @@ bg-[var(--color-primary)]
           </p>
         </div>
       </section>
-
+     <ScrollToTopButton />
       {/* <NoiseEffect /> */}
     </div>
   );
