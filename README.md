@@ -41,7 +41,7 @@ npm run dev
 
 ## 📁 Download Templates Directly
 
-- 📦 [Basic Starter - ZIP](https://github.com/your-username/react-vite-starters/archive/refs/heads/main.zip)
+- 📦 [Basic Starter - ZIP]([https://github.com/your-username/react-vite-starters/archive/refs/heads/main.zip](https://download-directory.github.io/?url=https://github.com/Ansh-dhanani/react_template/tree/main/Templates/Template_1))
 - 🌈 [Landing Starter - ZIP](https://github.com/your-username/react-vite-starters/archive/refs/heads/main.zip)
 - 📊 [Dashboard Starter - ZIP](https://github.com/your-username/react-vite-starters/archive/refs/heads/main.zip)
 
