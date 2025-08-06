@@ -1,5 +1,10 @@
 # ⚛️ React + Vite Multi-Starter Templates
 
+
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer--Motion-EF2779?style=for-the-badge&logo=framer&logoColor=white)
+
 > The ultimate React starter hub, built with ⚡ Vite. Clean. Modern. Cool Designs. Smooth animations.
 
 Three (and counting) starter templates for React devs who just wanna code without wasting time on setup.
