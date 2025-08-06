@@ -10,6 +10,7 @@ A collection of 🔥 React templates powered by Vite — built to give you a hea
 
 ### 📦 Basic Starter
 Minimal setup — just React + Vite + TailwindCSS.
+
 If the link below doesn't work, you can download the specific folder manually by following the instructions given below the feature section
 
 ![Basic Screenshot](./screenshots/basic.png)
