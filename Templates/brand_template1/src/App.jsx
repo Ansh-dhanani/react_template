@@ -7,6 +7,7 @@ import Navbar from "./components/Nav2.jsx";
 import NoiseEffect from "./components/Noise.jsx"; // Adjust the import path as necessary
 import CustomCursor from "./components/CustomCursor.jsx";
 import ScrollToTopButton from "./components/ScrolltoTop.jsx"; 
+import GradualBlurEffect from "./components/Gradualblur.jsx";
 function App() {
   const [isDark, setIsDark] = useState(false);
 
@@ -66,6 +67,7 @@ bg-[var(--color-primary)]
   return (
     <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300">
       {/* Custom Cursor Component */}
+      <GradualBlurEffect/>
       <CustomCursor />
       <Navbar />
 
