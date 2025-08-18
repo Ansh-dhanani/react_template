@@ -1,0 +1,126 @@
+/* General layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom, #1a1a1a, #000);
+  color: white;
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.nav-buttons button {
+  margin-left: 10px;
+}
+
+/* Buttons */
+.btn-primary {
+  padding: 10px 20px;
+  background-color: #22c55e;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #16a34a;
+}
+
+.btn-secondary {
+  padding: 10px 20px;
+  background-color: #444;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background-color: #666;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.subtitle {
+  max-width: 600px;
+  margin-bottom: 30px;
+  color: #ccc;
+}
+
+.button-grid {
+  display: flex;
+  flex-direction:column;
+  gap: 15px;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Footer */
+.footer {
+  background: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  padding: 20px;
+}
+
+.footer-text {
+  margin-bottom: 10px;
+  color: #aaa;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 22px;
+}
+
+.social-icons a {
+  color: #aaa;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  color: #22c55e;
+}
+
+.footer-copy {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #666;
+}
