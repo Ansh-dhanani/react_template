@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when scrollY > 300
   useEffect(() => {
     const toggleVisibility = () => {
       setIsVisible(window.scrollY > 300);
@@ -13,7 +13,6 @@ const ScrollToTopButton = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  // Scroll to top smoothly
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -21,17 +20,36 @@ const ScrollToTopButton = () => {
     });
   };
 
-  if (!isVisible) return null;
-
   return (
-   <button
-  onClick={scrollToTop}
-  title="Go to top"
-  style={{ backgroundColor: "var(--color-secondary)" }}
-  className="fixed bottom-8 right-8 z-50 hover:brightness-110 text-white p-3 rounded-full text-xl shadow-lg transition-transform transform hover:scale-110"
->
-  ⮝
-</button>
+    <AnimatePresence>
+      {isVisible && (
+        <motion.button
+          onClick={scrollToTop}
+          title="Go to top"
+          className="fixed bottom-8 right-8 z-50 p-3 rounded-full text-xl shadow-lg bg-[var(--color-primary)] text-white"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.5 }}
+          whileHover={{ 
+            scale: 1.1,
+            backgroundColor: "var(--color-secondary)"
+          }}
+          whileTap={{ scale: 0.9 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <motion.span
+            animate={{ y: [0, -2, 0] }}
+            transition={{ 
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "reverse"
+            }}
+          >
+            ⮝
+          </motion.span>
+        </motion.button>
+      )}
+    </AnimatePresence>
   );
 };
 

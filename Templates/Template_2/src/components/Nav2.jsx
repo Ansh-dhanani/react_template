@@ -1,6 +1,38 @@
 import React from "react";
 
-const Navbar = () => {
+const ThemeToggle = ({ isDark, toggleTheme }) => {
+  return (
+    <div
+      onClick={toggleTheme}
+      className="relative cursor-pointer font-montblanc text-sm"
+    >
+      <div className="flex">
+        <span
+          className={`transition-opacity duration-300 ${
+            isDark ? "opacity-50" : "opacity-100"
+          }`}
+        >
+          LIGHT
+        </span>
+        <span className="mx-1 opacity-30">/</span>
+        <span
+          className={`transition-opacity duration-300 ${
+            isDark ? "opacity-100" : "opacity-50"
+          }`}
+        >
+          DARK
+        </span>
+      </div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-current opacity-20"></div>
+      <div
+        className="absolute bottom-0 h-0.5 bg-current transition-all duration-500"
+        style={{ width: "45%", left: isDark ? "55%" : "0%" }}
+      ></div>
+    </div>
+  );
+};
+
+const Navbar = ({ isDark, toggleTheme }) => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState("Home");
   const [isMobile, setIsMobile] = React.useState(window.innerWidth < 640);
@@ -25,13 +57,11 @@ const Navbar = () => {
     setActiveItem(item);
     setIsMenuOpen(false);
 
-    // Update button text
     document.querySelector(".menu-text").textContent = "MENU";
     document.querySelectorAll(".arrow").forEach((arrow) => {
       arrow.classList.remove("rotate-180");
     });
 
-    // Scroll to section
     const sectionId = item.toLowerCase();
     const element = document.getElementById(sectionId);
     if (element) {
@@ -54,7 +84,6 @@ const Navbar = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
 
-      // Simple logic: change active item based on scroll position
       if (scrollPosition < windowHeight * 0.5) {
         setActiveItem("Home");
       } else if (scrollPosition < windowHeight * 1.5) {
@@ -84,13 +113,11 @@ const Navbar = () => {
   return (
     <div className="navbar-container">
       {/* Fixed Site Name */}
-      <div
-        className="fixed top-7 left-5 sm:top-10 sm:left-14 z-[70] text-4xl sm:text-5xl font-montblanc font-bold"
-       // style={{ mixBlendMode: "difference", color: "rgb(255, 255, 255)" }}
-  
-      >
+      <div className="fixed top-7 left-5 sm:top-10 sm:left-14 z-[70] text-4xl sm:text-5xl font-montblanc font-bold">
         SITE NAME
       </div>
+
+      {/* Menu Button */}
       <div
         onClick={toggleMenu}
         className="fixed top-4 right-4 sm:top-8 sm:right-14 z-[71] flex items-center justify-between gap-2 sm:gap-3 p-3 sm:p-4 pl-4 sm:pl-6 pr-3 sm:pr-5 bg-[var(--color-primary)] border-b-[1px] border-[var(--color-contrast)] rounded-full transition-all duration-300 hover:scale-105 active:scale-95"
@@ -118,6 +145,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Menu Content */}
       <div
         className="fixed bg-[var(--color-contrast)] z-[60] rounded-[20px] sm:rounded-[40px] overflow-hidden"
         style={{
@@ -158,11 +186,13 @@ const Navbar = () => {
               </span>
             </div>
           ))}
+
+          {/* ✅ Theme Toggle Added Here */}
           <div
-            className="text-[var(--color-bg)] pt-4 cursor-pointer hover:opacity-60 transition-all duration-300"
+            className="text-[var(--color-bg)] pt-4 cursor-pointer"
             onClick={(e) => {
               e.stopPropagation();
-              document.documentElement.classList.toggle("dark");
+              toggleTheme();
             }}
             style={{
               opacity: isMenuOpen ? 1 : 0,
@@ -173,7 +203,7 @@ const Navbar = () => {
                 : "opacity 0.2s ease-out",
             }}
           >
-            <div>Dark / Light</div>
+            <ThemeToggle isDark={isDark} toggleTheme={toggleTheme} />
           </div>
         </div>
       </div>
