@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Squeeze as Hamburger } from 'hamburger-react'
+
 const Navbar = ({ 
   logo = "ANSH DHANANI", 
   menuItems = ['WORK', 'ABOUT', 'SERVICES', 'CONTACT'],
   onMenuClick = () => {},
   isDark = false,
-  toggleTheme = () => {}
+  toggleTheme = () => {} // Added props
 }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -26,26 +27,28 @@ const Navbar = ({
         <div className="w-12"></div>
 
         {/*Nav-items*/}
-      <div id="nav" className="hidden md:grid grid-cols-4 gap-8 p-2 bg-[var(--color-bg-tertiary)]">
-      {menuItems.map((item) => (
-      <div
-      key={item}
-      className="navbar-items text-center font-semibold text-[var(--color-text)] hover:text-blue-500 cursor-pointer"
-     >
-      {item}
-    </div>
-    ))}
-    </div>
-         {/* Logo */}
+        <div id="nav" className="hidden md:grid grid-cols-4 gap-8 p-2 bg-[var(--color-bg-tertiary)]">
+          {menuItems.map((item) => (
+            <div
+              key={item}
+              className="navbar-items text-center font-semibold text-[var(--color-text)] hover:text-blue-500 cursor-pointer"
+            >
+              {item}
+            </div>
+          ))}
+        </div>
+        
+        {/* Logo */}
         <h1 className="text-[var(--color-text)] justify-center ml-[55px] pl-4 text-lg md:text-2xl font-bold tracking-wider whitespace-nowrap flex-shrink-0">
           {logo}
         </h1>
-           {/* Theme Toggle */}
+        
+        {/* Theme Toggle */}
         <button
-          onClick={toggleTheme}
+          onClick={toggleTheme} // Use the passed toggleTheme function
           aria-label="Toggle Dark Mode"
           className={`w-14 h-8 fixed flex items-center p-1 rounded-full transition-colors duration-300 mr-4 ${
-            isDark ? "bg-slate-700" : "bg-gray-300"
+            isDark ? "bg-blue-700" : "bg-gray-300"
           }`}
         >
           <span
@@ -56,9 +59,9 @@ const Navbar = ({
           </span>
         </button>
 
-     {/* Hamburger Button */}
-       <div className="w-28 h-20 flex justify-center items-center md:hidden">
-        <Hamburger
+        {/* Hamburger Button */}
+        <div className="w-28 h-20 flex justify-center items-center md:hidden">
+          <Hamburger
             toggled={isMenuOpen}
             toggle={toggleMenu}
             size={27}
@@ -70,9 +73,10 @@ const Navbar = ({
             distance={10}
             label="Toggle Menu"
             className="z-50"
-         />
-      </div>
+          />
+        </div>
       </header>
+      
       {/* Navigation Menu */}
       <nav className={`fixed top-0 left-0 w-full h-full flex flex-col justify-center items-center overflow-hidden ${isMenuOpen ? 'z-30 pointer-events-auto' : 'z-30 pointer-events-none'}`}>
         <div 
@@ -85,11 +89,6 @@ const Navbar = ({
           {/* Dark background for revealed content */}
           <div className="absolute inset-0 bg-[var(--color-bg-tertiary)]"></div>
         
-          {/* Close Button */}
-         
-
-   
-
           {/* Menu Items - Centered with Scroll */}
           <div className="flex-1 flex flex-col justify-center relative z-10 py-20">
             <div className="max-h-[50vh] overflow-y-scroll scrollbar-hide" style={{scrollbarWidth: 'none', msOverflowStyle: 'none'}}>

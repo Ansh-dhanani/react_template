@@ -1,52 +1,59 @@
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 import { motion } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect } from "react"; // Added useEffect import
 import Navbar from "./components/Nav2.jsx";
-//import { HoverFollowProvider,HoverFollowTrigger,HoverFollowButton } from "./components/Hover.jsx";
-import NoiseEffect from "./components/Noise.jsx"; // Adjust the import path as necessary
+import NoiseEffect from "./components/Noise.jsx";
 import CustomCursor from "./components/CustomCursor.jsx";
 import ScrollToTopButton from "./components/ScrolltoTop.jsx"; 
 import GradualBlurEffect from "./components/Gradualblur.jsx";
+
 function App() {
   const [isDark, setIsDark] = useState(false);
 
+  // Initialize theme from localStorage on component mount
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setIsDark(true);
+      document.documentElement.classList.add("dark");
+    } else if (savedTheme === "light") {
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
+    }
+  }, []);
+
   const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.classList.toggle("dark");
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    
+    // Update DOM class
+    if (newTheme) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    
+    // Store theme preference in localStorage
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
   };
-  /*
-"font-apple-garamond"
-"font-merapro"
-"font-boone"
-"font-default-lingo"    
-"font-minecraft"
-"font-montblanc"
-"font-palmore"
-"font-tan-kulture"
-"font-gridular"
-"font-telegraf"
-*/
 
-  // for colour variables use the following format:
-  /**
-bg-[var(--color-bg)]
-text-[var(--color-text)]
-border-[var(--color-border)]
-hover:bg-[var(--color-secondary)]
-bg-[var(--color-primary)]
-*/
+  // Initialize Lenis with useEffect
+  useEffect(() => {
+    const lenis = new Lenis();
 
-  // Initialize Lenis
-  const lenis = new Lenis();
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
 
-  // Use requestAnimationFrame to continuously update the scroll
-  function raf(time) {
-    lenis.raf(time);
     requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
+    
+    // Cleanup function
+    return () => {
+      // Add any cleanup needed for Lenis
+    };
+  }, []);
 
   const images = [
     {
@@ -66,43 +73,34 @@ bg-[var(--color-primary)]
 
   return (
     <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-300">
-      {/* Custom Cursor Component */}
       <GradualBlurEffect/>
       <CustomCursor />
-      <Navbar />
-
-
-
-    
+      <Navbar isDark={isDark} toggleTheme={toggleTheme} /> {/* Added props */}
 
       {/* Sample Pages/Sections for Scrolling */}
       <section id="home" className="min-h-screen flex items-center justify-center bg-[var(--color-bg)]">
         <div className="text-center">
-           <h1 className="relative text-5xl md:text-6xl  ml-8 font-montblanc font-bold text-[var(--color-text)] mb-4">
-        {"Home Section".split(" ").map((word, index) => (
-          <motion.span
-            key={index}
-            initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-            animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-            transition={{
-              duration: 0.3,
-              delay: index * 0.1,
-              ease: "easeInOut",
-            }}
-            className="mr-[30px] inline-block"
-          >
-            {word}
-          </motion.span>
-        ))}
-      </h1>
+          <h1 className="relative text-5xl md:text-6xl ml-8 font-montblanc font-bold text-[var(--color-text)] mb-4">
+            {"Home Section".split(" ").map((word, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
+                animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+                transition={{
+                  duration: 0.3,
+                  delay: index * 0.1,
+                  ease: "easeInOut",
+                }}
+                className="mr-[30px] inline-block"
+              >
+                {word}
+              </motion.span>
+            ))}
+          </h1>
           <p className="text-lg md:text-xl text-[var(--color-text)] opacity-70 max-w-2xl mx-auto">
             This is the home section. The navbar will automatically highlight "Home" when you're in this area.
           </p>
-            {/*for Hero section with blur and on load word by word animation*/}
-      
-      {/*hero section end*/}
         </div>
-        
       </section>
 
       <section id="about" className="min-h-screen flex items-center justify-center bg-[var(--color-primary)]">
@@ -136,8 +134,7 @@ bg-[var(--color-primary)]
           </button>
         </div>
       </section>
-     <ScrollToTopButton />
-      {/* <NoiseEffect /> */}
+      <ScrollToTopButton />
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Navbar = () => {
+const Navbar = ({ isDark, toggleTheme }) => { // Added props
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [activeItem, setActiveItem] = React.useState("Home");
   const [isMobile, setIsMobile] = React.useState(window.innerWidth < 640);
@@ -86,8 +86,6 @@ const Navbar = () => {
       {/* Fixed Site Name */}
       <div
         className="fixed top-7 left-5 sm:top-10 sm:left-14 z-[70] text-4xl sm:text-5xl font-montblanc font-bold"
-       // style={{ mixBlendMode: "difference", color: "rgb(255, 255, 255)" }}
-  
       >
         SITE NAME
       </div>
@@ -162,7 +160,11 @@ const Navbar = () => {
             className="text-[var(--color-bg)] pt-4 cursor-pointer hover:opacity-60 transition-all duration-300"
             onClick={(e) => {
               e.stopPropagation();
-              document.documentElement.classList.toggle("dark");
+              if (toggleTheme) {
+                toggleTheme();
+              } else {
+                document.documentElement.classList.toggle("dark");
+              }
             }}
             style={{
               opacity: isMenuOpen ? 1 : 0,

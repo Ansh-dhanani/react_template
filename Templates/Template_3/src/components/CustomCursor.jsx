@@ -4,6 +4,7 @@ const CustomCursor = () => {
   const [currentType, setCurrentType] = useState('normal');
   const [opacity, setOpacity] = useState(0);
   const [clickAnimate, setClickAnimate] = useState(false);
+  const [linkClickAnimate, setLinkClickAnimate] = useState(false);
   const [isContextMenuOpen, setIsContextMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   
@@ -13,6 +14,36 @@ const CustomCursor = () => {
   const animationFrameRef = useRef(null);
   const timeoutRef = useRef(null);
   const isAnimatingRef = useRef(false);
+
+  // Check if element is interactive
+  const isElementInteractive = (element) => {
+    if (!element) return false;
+    
+    // Check common interactive elements
+    const interactiveSelectors = [
+      'a', 'button', 'input', 'textarea', 'select', 'label',
+      '[role="button"]', '[role="link"]', '[tabindex]',
+      '[onclick]', '[data-clickable]'
+    ];
+    
+    // Check if element matches any interactive selector
+    if (interactiveSelectors.some(selector => element.matches(selector))) {
+      return true;
+    }
+    
+    // Check if element has cursor: pointer style
+    const style = window.getComputedStyle(element);
+    if (style.cursor === 'pointer' || style.cursor === 'grab') {
+      return true;
+    }
+    
+    // Check if element is contenteditable
+    if (element.hasAttribute('contenteditable')) {
+      return true;
+    }
+    
+    return false;
+  };
 
   // Check if device is mobile/tablet
   useEffect(() => {
@@ -103,15 +134,16 @@ const CustomCursor = () => {
       const element = document.elementFromPoint(x, y);
       if (!element) return false;
       
-      const hoverTags = ["A", "BUTTON", "INPUT", "TEXTAREA", "LABEL", "SELECT"];
-      const tagName = element.tagName;
+      // Check if the element or any of its parents are interactive
+      let currentElement = element;
+      while (currentElement && currentElement !== document.body) {
+        if (isElementInteractive(currentElement)) {
+          return true;
+        }
+        currentElement = currentElement.parentElement;
+      }
       
-      const hasClickHandler = element.onclick !== null || 
-                            element.getAttribute('onclick') !== null ||
-                            element.style.cursor === 'pointer' ||
-                            (element.hasAttribute('role') && element.getAttribute('role') === 'button');
-      
-      return (tagName && hoverTags.includes(tagName)) || hasClickHandler;
+      return false;
     } catch (error) {
       return false;
     }
@@ -149,8 +181,12 @@ const CustomCursor = () => {
       if (!e || typeof e.button !== 'number') return;
       
       if (e.button === 0) { // Left click
-        setCurrentType('clicked');
-        setClickAnimate(true);
+        if (currentType === 'onlink') {
+          setLinkClickAnimate(true);
+        } else {
+          setCurrentType('clicked');
+          setClickAnimate(true);
+        }
       } else if (e.button === 2) { // Right click
         setIsContextMenuOpen(true);
         setOpacity(0);
@@ -167,6 +203,7 @@ const CustomCursor = () => {
       
       if (e.button === 0) { // Left click release
         setClickAnimate(false);
+        setLinkClickAnimate(false);
         
         // Small delay to ensure we get the correct hover state
         setTimeout(() => {
@@ -373,9 +410,9 @@ const CustomCursor = () => {
         }}
       >
         <div
-          className="absolute custom-cursor-container transition-transform duration-150"
+          className="absolute custom-cursor-container transition-transform duration-150 ease-out"
           style={{
-            transform: `translate(-20%, -10%) scale(${clickAnimate ? 0.8 : 1})`,
+            transform: `translate(-20%, -10%) scale(${clickAnimate ? 0.8 : linkClickAnimate ? 0.7 : currentType === 'onlink' ? 0.85 : 1}) rotate(${linkClickAnimate ? -10 : currentType === 'onlink' ? -5 : 0}deg)`,
             transformOrigin: 'center center'
           }}
         >
