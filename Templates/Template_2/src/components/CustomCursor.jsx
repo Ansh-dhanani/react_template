@@ -94,28 +94,60 @@ const CustomCursor = () => {
   }, [isMobile]);
 
   // Check if hovering over interactive elements
-  const isHoveringInteractive = (x, y) => {
-    try {
-      if (!document.elementFromPoint || !isFinite(x) || !isFinite(y)) {
-        return false;
-      }
-      
-      const element = document.elementFromPoint(x, y);
-      if (!element) return false;
-      
-      const hoverTags = ["A", "BUTTON", "INPUT", "TEXTAREA", "LABEL", "SELECT"];
-      const tagName = element.tagName;
-      
-      const hasClickHandler = element.onclick !== null || 
-                            element.getAttribute('onclick') !== null ||
-                            element.style.cursor === 'pointer' ||
-                            (element.hasAttribute('role') && element.getAttribute('role') === 'button');
-      
-      return (tagName && hoverTags.includes(tagName)) || hasClickHandler;
-    } catch (error) {
+  // Add this function to check if element is interactive
+const isElementInteractive = (element) => {
+  if (!element) return false;
+  
+  // Check common interactive elements
+  const interactiveSelectors = [
+    'a', 'button', 'input', 'textarea', 'select', 'label',
+    '[role="button"]', '[role="link"]', '[tabindex]',
+    '[onclick]', '[data-clickable]'
+  ];
+  
+  // Check if element matches any interactive selector
+  if (interactiveSelectors.some(selector => element.matches(selector))) {
+    return true;
+  }
+  
+  // Check if element has cursor: pointer style
+  const style = window.getComputedStyle(element);
+  if (style.cursor === 'pointer' || style.cursor === 'grab') {
+    return true;
+  }
+  
+  // Check if element is contenteditable
+  if (element.hasAttribute('contenteditable')) {
+    return true;
+  }
+  
+  return false;
+};
+
+// Update the isHoveringInteractive function
+const isHoveringInteractive = (x, y) => {
+  try {
+    if (!document.elementFromPoint || !isFinite(x) || !isFinite(y)) {
       return false;
     }
-  };
+    
+    const element = document.elementFromPoint(x, y);
+    if (!element) return false;
+    
+    // Check if the element or any of its parents are interactive
+    let currentElement = element;
+    while (currentElement && currentElement !== document.body) {
+      if (isElementInteractive(currentElement)) {
+        return true;
+      }
+      currentElement = currentElement.parentElement;
+    }
+    
+    return false;
+  } catch (error) {
+    return false;
+  }
+};
 
   // Mouse move handler
   const handleMouseMove = (e) => {
